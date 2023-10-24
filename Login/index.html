@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section class="wrapper">
+        <div class="form signup">
+            <header>Signup</header>
+            <form action="#">
+                <input type="text" placeholder="Full name" required />
+                <input type="text" placeholder="Email address" required />
+                <input type="password" placeholder="Password" required />
+                <div class="checkbox">
+                    <input type="checkbox" id="signupCheck" />
+                    <label for="signupCheck">I accept all terms & conditions</label>
+                </div>
+                <input type="submit" value="Signup" />
+            </form>
+        </div>
+
+        <div class="form login">
+            <header>Login</header>
+            <form action="#">
+                <input type="text" id="email" placeholder="Email address" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <a href="#">Forgot password?</a>
+                <input type="button" value="Login" onclick="handleSubmit()" />
+            </form>
+        </div>
+    </section>
+    <script src="../javascripts/login.js"></script>
+    <script>
+        const wrapper = document.querySelector(".wrapper"),
+            signupHeader = document.querySelector(".signup header"),
+            loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+            wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+            wrapper.classList.remove("active");
+        });
+
+        const handleSubmit = () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            if (email === "" || password === "") {
+                if (email === "") {
+                    alert('Vui lòng nhập địa chỉ email.');
+                } else {
+                    alert('Vui lòng nhập mật khẩu.');
+                }
+            } else if (email === "email@email.com" && password === "password") {
+                alert('Đăng nhập thành công!');
+            } else {
+                alert('Đăng nhập không thành công. Vui lòng kiểm tra email và mật khẩu.');
+            }
+        }
+
+    </script>
+</body>
+
+
+</html>
