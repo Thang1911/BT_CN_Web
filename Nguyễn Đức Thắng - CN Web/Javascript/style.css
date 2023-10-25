@@ -1,0 +1,17 @@
+#user {
+    margin: 10px 20px;
+} 
+
+#pass {
+    margin: 10px 20px;
+}
+
+button {
+    margin: 10px 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

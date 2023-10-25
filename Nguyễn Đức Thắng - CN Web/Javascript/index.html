@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">in
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form validate javascript</h2>
+    <div>
+        <label for="user">Tài khoản</label>
+        <input id="user" type="text">
+        <br>
+        <label for="pass">Mật khẩu</label>
+        <input id="pass" type="password">
+        <br>
+        <button type="button" onclick="handleSubmit()">Submit</button>
+    </div>
+</body>
+<script>
+    function handleSubmit() {
+        const userName = document.getElementById("user").value;
+        const pass = document.getElementById("pass").value;
+
+        if (userName === '123' && pass === '123') {
+            alert('Login succeded');
+            window.location.href = 'https://www.youtube.com/'
+        } else if (userName.length <= 0) {
+            alert('Please enter username')
+        } else if (pass.length <= 0) {
+            alert('Please enter password')
+        } else {
+            alert('Login failed')
+        }
+    }
+</script>
+
+</html>
